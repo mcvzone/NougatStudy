@@ -43,7 +43,11 @@
         </receiver>
 
         <activity android:name=".SmsActivity" />
-        <activity android:name=".EventActivity"></activity>
+        <activity android:name=".EventActivity" />
+        <activity android:name=".ProgressActivity" />
+        <activity android:name=".AnimationActivity" />
+        <activity android:name=".AnimationTabActivity" />
+        <activity android:name=".FlagmentActivity"></activity>
     </application>
 
 </manifest>

@@ -4,56 +4,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/MAIN_LY_LAYOUT"
     tools:context="com.example.neo.nougatstudy.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/MAIN_BT_LAYOUT"
-                android:text="Layout"/>
-
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Layout" />
+
+            <Button
                 android:id="@+id/MAIN_BT_SCROLLVIEW"
-                android:text="SCROLL VIEW"/>
-
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="SCROLL VIEW" />
+
+            <Button
                 android:id="@+id/MAIN_BT_SUBSCREEN"
-                android:text="SUB SCREEN"/>
-
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="SUB SCREEN" />
+
+            <Button
                 android:id="@+id/MAIN_BT_CALLPHONE"
-                android:text="전화걸기"/>
-
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="전화걸기" />
+
+            <Button
                 android:id="@+id/MAIN_BT_COMPONENT"
-                android:text="COMPONENT OPEN"/>
-
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="COMPONENT OPEN" />
+
+            <Button
                 android:id="@+id/MAIN_BT_SERVICE"
-                android:text="SERVICE 시작"/>
-
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="SERVICE 시작" />
+
+            <Button
                 android:id="@+id/MAIN_BT_EVENT"
-                android:text="EVENT 시작"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EVENT 시작" />
+
+            <Button
+                android:id="@+id/MAIN_BT_TOAST"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TOAST 시작" />
+
+            <Button
+                android:id="@+id/MAIN_BT_TOAST_INFLATER"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TOAST INFLATER 시작" />
+
+            <Button
+                android:id="@+id/MAIN_BT_TOAST_SNACK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="스넥바" />
+
+            <Button
+                android:id="@+id/MAIN_BT_TOAST_ALERT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="알림 대화상자" />
+
+            <Button
+                android:id="@+id/MAIN_BT_PROGRESS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PROGRESS BAR" />
+
+            <Button
+                android:id="@+id/MAIN_BT_ANIMATION"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ANIMATION" />
+
+            <Button
+                android:id="@+id/MAIN_BT_ANIMATIONTAB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ANIMATION TAB" />
+
+            <Button
+                android:id="@+id/MAIN_BT_FLAGMENT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FLAGMENT" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

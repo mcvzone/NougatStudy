@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.neo.nougatstudy.FlagmentActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="시작"
+        android:id="@+id/FRAGMENT_BT_START"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메뉴"
+        android:id="@+id/FRAGMENT_BT_START2"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/FRAGMENT_BT_START"
+        android:layout_toEndOf="@+id/FRAGMENT_BT_START"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp" />
+
+    <FrameLayout
+        android:id="@+id/FRAGMENT_FL_CONTAINER"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/FRAGMENT_BT_START">
+
+        <!--
+        <fragment
+            android:id="@+id/mainfragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.example.neo.nougatstudy.MainFragment"/>
+            -->
+
+    </FrameLayout>
+</RelativeLayout>
