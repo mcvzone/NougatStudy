@@ -17,6 +17,8 @@ import android.support.v7.widget.LinearLayoutCompat;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -245,5 +247,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int curid = item.getItemId();
+
+        switch(curid){
+            case R.id.menu_refresh:
+                Toast.makeText(this, "새로고침메뉴 클릭됨.", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.menu_search:
+                Toast.makeText(this, "검색 메뉴 선택됨.", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.menu_settings:
+                Toast.makeText(this, "셋팅 메뉴 선택됨.", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
