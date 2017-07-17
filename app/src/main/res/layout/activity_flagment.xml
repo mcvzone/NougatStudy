@@ -3,62 +3,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.neo.nougatstudy.FlagmentActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="시작"
-        android:id="@+id/FRAGMENT_BT_START"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="메뉴"
-        android:id="@+id/FRAGMENT_BT_START2"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/FRAGMENT_BT_START"
-        android:layout_toEndOf="@+id/FRAGMENT_BT_START"
-        android:layout_marginLeft="22dp"
-        android:layout_marginStart="22dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LIST"
-        android:id="@+id/FRAGMENT_BT_START3"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/FRAGMENT_BT_START2"
-        android:layout_toEndOf="@+id/FRAGMENT_BT_START2"
-        android:layout_marginLeft="22dp"
-        android:layout_marginStart="22dp" />
-
-    <FrameLayout
-        android:id="@+id/FRAGMENT_FL_CONTAINER"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_below="@id/FRAGMENT_BT_START"/>
+        android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/FRAGMENT_FL_CONTAINER2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/FRAGMENT_FL_CONTAINER"/>
-
-        <!--
-        <fragment
-            android:id="@+id/FRAGMENT_FL_CONTAINER"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:layout_below="@id/FRAGMENT_BT_START"
-            android:name="com.example.neo.nougatstudy.ListFragment"/>
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                android:elevation="1dp"
+                android:id="@+id/toolbar">
+            </android.support.v7.widget.Toolbar>
 
-        <fragment
-            android:id="@+id/FRAGMENT_FL_CONTAINER2"
+            <android.support.design.widget.TabLayout
+                android:id="@+id/FRAGMENT_TL_TAB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:background="@android:color/background_light"
+                app:tabMode="fixed"
+                app:tabGravity="fill"
+                app:tabTextColor="@color/colorPrimary"
+                app:tabSelectedTextColor="@color/colorAccent">
+
+            </android.support.design.widget.TabLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="com.example.neo.nougatstudy.ViewerFragment"/>
-            -->
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/FRAGMENT_FL_BOTTOM">
+
+            <!--Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="시작"
+                android:id="@+id/FRAGMENT_BT_START"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="메뉴"
+                android:id="@+id/FRAGMENT_BT_START2"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/FRAGMENT_BT_START"
+                android:layout_toEndOf="@+id/FRAGMENT_BT_START"
+                android:layout_marginLeft="22dp"
+                android:layout_marginStart="22dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIST"
+                android:id="@+id/FRAGMENT_BT_START3"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/FRAGMENT_BT_START2"
+                android:layout_toEndOf="@+id/FRAGMENT_BT_START2"
+                android:layout_marginLeft="22dp"
+                android:layout_marginStart="22dp" /-->
+
+
+            <FrameLayout
+                android:id="@+id/FRAGMENT_FL_CONTAINER"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <FrameLayout
+                android:id="@+id/FRAGMENT_FL_CONTAINER2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <!--
+            <fragment
+                android:id="@+id/FRAGMENT_FL_CONTAINER"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@id/FRAGMENT_BT_START"
+                android:name="com.example.neo.nougatstudy.ListFragment"/>
+
+
+            <fragment
+                android:id="@+id/FRAGMENT_FL_CONTAINER2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.example.neo.nougatstudy.ViewerFragment"/>
+                -->
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>
