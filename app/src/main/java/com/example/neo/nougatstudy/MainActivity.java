@@ -23,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.MAIN_BT_ANIMATIONTAB).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_FLAGMENT).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_WEBVIEW).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_LISTVIEW).setOnClickListener(this);
 
         Log.d("MYLOG", "MainActivity onCreate 호출 됨");
         Intent paddedIntent = getIntent();
@@ -206,6 +208,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.MAIN_BT_WEBVIEW:
                 intent = new Intent(getApplicationContext(), WebViewActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.MAIN_BT_LISTVIEW:
+                intent = new Intent(getApplicationContext(), ListViewActivity.class);
                 startActivity(intent);
                 break;
         }

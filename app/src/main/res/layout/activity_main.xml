@@ -105,12 +105,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="FLAGMENT" />
+
             <Button
                 android:id="@+id/MAIN_BT_WEBVIEW"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="WEB VIEW" />
 
+            <com.example.neo.nougatstudy.BitmapButton
+                android:id="@+id/MAIN_BT_BITMAP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BITMAP BUTTON" />
+
+            <Button
+                android:id="@+id/MAIN_BT_LISTVIEW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LIST VIEW" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
