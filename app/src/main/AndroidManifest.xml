@@ -51,7 +51,8 @@
         <activity android:name=".FlagmentActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".NinePatchActivity" />
-        <activity android:name=".ListViewActivity"></activity>
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".SpinnerActivity"></activity>
     </application>
 
 </manifest>

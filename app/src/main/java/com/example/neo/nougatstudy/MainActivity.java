@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.MAIN_BT_FLAGMENT).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_WEBVIEW).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_LISTVIEW).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_SPINNER).setOnClickListener(this);
 
         Log.d("MYLOG", "MainActivity onCreate 호출 됨");
         Intent paddedIntent = getIntent();
@@ -213,6 +214,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.MAIN_BT_LISTVIEW:
                 intent = new Intent(getApplicationContext(), ListViewActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.MAIN_BT_SPINNER:
+                intent = new Intent(getApplicationContext(), SpinnerActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -7,10 +7,12 @@ package com.example.neo.nougatstudy;
 public class SingerItem {
     private String name;
     private String mobile;
+    private int id;
 
-    public SingerItem(String name, String mobile) {
+    public SingerItem(String name, String mobile, int id) {
         this.name = name;
         this.mobile = mobile;
+        this.id = id;
     }
 
 
@@ -20,6 +22,14 @@ public class SingerItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMobile() {

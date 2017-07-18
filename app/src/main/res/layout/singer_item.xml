@@ -4,6 +4,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
+        android:id="@+id/SINGER_IV_IMAGEVIEW"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@mipmap/ic_launcher"/>
