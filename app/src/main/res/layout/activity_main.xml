@@ -129,6 +129,19 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/MAIN_BT_SPINNER"
                 android:text="SPINNER"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MAIN_BT_GRIDVIEW"
+                android:text="GRID VIEW"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MAIN_BT_PICKER"
+                android:text="PICKER"/>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

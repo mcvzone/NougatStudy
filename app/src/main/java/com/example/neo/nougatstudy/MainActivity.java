@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.MAIN_BT_WEBVIEW).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_LISTVIEW).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_SPINNER).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_GRIDVIEW).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_PICKER).setOnClickListener(this);
 
         Log.d("MYLOG", "MainActivity onCreate 호출 됨");
         Intent paddedIntent = getIntent();
@@ -219,6 +221,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.MAIN_BT_SPINNER:
                 intent = new Intent(getApplicationContext(), SpinnerActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.MAIN_BT_GRIDVIEW:
+                intent = new Intent(getApplicationContext(), GridViewActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.MAIN_BT_PICKER:
+                intent = new Intent(getApplicationContext(), PickerActivity.class);
                 startActivity(intent);
                 break;
         }

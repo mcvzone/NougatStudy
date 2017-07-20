@@ -6,33 +6,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ListViewActivity extends AppCompatActivity {
-    EditText name;
-    EditText tel;
+public class GridViewActivity extends AppCompatActivity {
+    SingerAdapter adapter;
+    GridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view);
+        setContentView(R.layout.activity_grid_view);
 
-        name = (EditText)findViewById(R.id.LISTVIEW_TXT_NAME);
-        tel = (EditText)findViewById(R.id.LISTVIEW_TXT_TEL);
-        ListView listView = (ListView)findViewById(R.id.LISTVIEW_LV_LIST);
+        gridView = (GridView)findViewById(R.id.GRID_GV_GRID);
 
-        final SingerAdapter adapter = new SingerAdapter();
+        adapter = new SingerAdapter();
         adapter.addItem(new SingerItem("소시", "01020102010", R.drawable.music1));
         adapter.addItem(new SingerItem("트렙", "01001991020", R.drawable.music1));
         adapter.addItem(new SingerItem("송창식", "01011199922", R.drawable.music2));
         adapter.addItem(new SingerItem("그래그래", "01099999999", R.drawable.music2));
-        listView.setAdapter(adapter);
+        gridView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 SingerItem singerItem = (SingerItem)adapter.getItem(i);
@@ -40,18 +37,16 @@ public class ListViewActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.LISTVIEW_BT_ADD).setOnClickListener(new View.OnClickListener(){
-
+        findViewById(R.id.GRID_BT_GRID).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                adapter.addItem(new SingerItem(name.getText().toString(), tel.getText().toString(), R.drawable.music2));
-                adapter.notifyDataSetChanged();
+                //adapter.addItem(new SingerItem(name.getText().toString(), tel.getText().toString(), R.drawable.music2));
+                //adapter.notifyDataSetChanged();
             }
         });
-
     }
 
-    class SingerAdapter extends BaseAdapter{
+    class SingerAdapter extends BaseAdapter {
         ArrayList<SingerItem> items = new ArrayList<SingerItem>();
 
         @Override

@@ -52,7 +52,9 @@
         <activity android:name=".WebViewActivity" />
         <activity android:name=".NinePatchActivity" />
         <activity android:name=".ListViewActivity" />
-        <activity android:name=".SpinnerActivity"></activity>
+        <activity android:name=".SpinnerActivity" />
+        <activity android:name=".GridViewActivity" />
+        <activity android:name=".PickerActivity"></activity>
     </application>
 
 </manifest>
