@@ -54,7 +54,8 @@
         <activity android:name=".ListViewActivity" />
         <activity android:name=".SpinnerActivity" />
         <activity android:name=".GridViewActivity" />
-        <activity android:name=".PickerActivity"></activity>
+        <activity android:name=".PickerActivity" />
+        <activity android:name=".ScheduleActivity"></activity>
     </application>
 
 </manifest>

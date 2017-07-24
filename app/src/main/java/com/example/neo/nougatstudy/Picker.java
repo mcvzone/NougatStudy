@@ -3,6 +3,7 @@ package com.example.neo.nougatstudy;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -38,9 +39,9 @@ public class Picker extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.picker, this, true);
 
-        datePicker = (DatePicker)findViewById(R.id.PICKER_DP_PICKER);
-        timePicker = (TimePicker)findViewById(R.id.PICKER_TP_PICKER);
-        checkBox = (CheckBox)findViewById(R.id.PICKER_CB_TIMECHECK);
+        datePicker = findViewById(R.id.PICKER_DP_PICKER);
+        timePicker = findViewById(R.id.PICKER_TP_PICKER);
+        checkBox = findViewById(R.id.PICKER_CB_TIMECHECK);
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
@@ -51,6 +52,9 @@ public class Picker extends LinearLayout {
         int h = calendar.get(Calendar.HOUR_OF_DAY);
         int m = calendar.get(Calendar.MINUTE);
 
+        timePicker.setEnabled(true);
+        checkBox.setChecked(true);
+        timePicker.setVisibility(checkBox.isChecked()? View.VISIBLE:View.GONE);
 
         datePicker.init(year, month, day, new DatePicker.OnDateChangedListener(){
 
@@ -67,7 +71,7 @@ public class Picker extends LinearLayout {
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker timePicker, int i, int i1) {
-                listener.onDateTimeChange(Picker.this, datePicker.getYear(), datePicker.getDayOfMonth(), datePicker.getDayOfMonth(), i, i1);
+                listener.onDateTimeChange(Picker.this, datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth(), i, i1);
             }
         });
 

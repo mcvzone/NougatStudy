@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.neo.nougatstudy.ScheduleActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/backward"
+            android:id="@+id/SCHEDULE_BT_BACK"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="현재연월"
+            android:gravity="center"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/SCHEDULE_TX_YYYYMMDD"/>
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/forward"
+            android:id="@+id/SCHEDULE_BT_FOR"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="7"
+        android:stretchMode="columnWidth"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"
+        android:background="#ffbbbbbb"
+        android:id="@+id/SCHEDULE_GV_MAIN">
+
+    </GridView>
+</LinearLayout>
