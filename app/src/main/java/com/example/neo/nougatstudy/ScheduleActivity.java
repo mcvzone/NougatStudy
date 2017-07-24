@@ -105,7 +105,7 @@ public class ScheduleActivity extends AppCompatActivity {
             firstDay = getFirstDay(dayOfWeek);
 
             curYear = calendar.get(Calendar.YEAR);
-            curMon = calendar.get(Calendar.MONTH);
+            curMon = calendar.get(Calendar.MONTH)+1;
             lastDay = getLastDay();
         }
 
@@ -142,17 +142,18 @@ public class ScheduleActivity extends AppCompatActivity {
 
         public int getLastDay(){
             switch(curMon){
-                case 0:
-                case 2:
-                case 4:case 6:case 7:case 9:case 11:
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
                     return 31;
-                case 3:case5:case8:case10:return 30;
-                default:
+                case 4:case 6: case 9: case 11:
+                    return 30;
+                case 2:
                     if((curYear%4==0)&&(curYear%100!=0)||(curYear%400==0)){
                         return 29;
                     } else {
                         return 28;
                     }
+                default:
+                    return 0;
             }
         }
 

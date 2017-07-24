@@ -33,6 +33,10 @@ public class MonthItemView extends RelativeLayout {
     }
 
     public void setDay(int day){
-        textView.setText(""+day);
+        if( day != 0 ) {
+            textView.setText("" + day);
+        } else {
+            textView.setText("");
+        }
     }
 }
