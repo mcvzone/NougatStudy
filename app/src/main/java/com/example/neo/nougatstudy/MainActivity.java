@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.MAIN_BT_GRIDVIEW).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_PICKER).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_SCHEDULE).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_MULTITOUCH).setOnClickListener(this);
 
         Log.d("MYLOG", "MainActivity onCreate 호출 됨");
         Intent paddedIntent = getIntent();
@@ -240,6 +241,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
+            case R.id.MAIN_BT_MULTITOUCH:
+                intent = new Intent(getApplicationContext(), MultiTouchActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 
