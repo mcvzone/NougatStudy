@@ -56,7 +56,7 @@
         <activity android:name=".GridViewActivity" />
         <activity android:name=".PickerActivity" />
         <activity android:name=".ScheduleActivity" />
-        <activity android:name=".MultiTouchActivity"></activity>
+        <activity android:name=".CustomViewActivity"></activity>
     </application>
 
 </manifest>

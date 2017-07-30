@@ -11,10 +11,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -23,7 +21,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.MAIN_BT_GRIDVIEW).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_PICKER).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_SCHEDULE).setOnClickListener(this);
-        findViewById(R.id.MAIN_BT_MULTITOUCH).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_CUSTOMVIEW).setOnClickListener(this);
 
         Log.d("MYLOG", "MainActivity onCreate 호출 됨");
         Intent paddedIntent = getIntent();
@@ -241,8 +238,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
-            case R.id.MAIN_BT_MULTITOUCH:
-                intent = new Intent(getApplicationContext(), MultiTouchActivity.class);
+            case R.id.MAIN_BT_CUSTOMVIEW:
+                intent = new Intent(getApplicationContext(), CustomViewActivity.class);
                 startActivity(intent);
                 break;
         }

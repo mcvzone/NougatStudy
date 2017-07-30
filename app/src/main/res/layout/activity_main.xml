@@ -161,10 +161,10 @@
                     android:layout_height="wrap_content"
                 android:text="SCHEDULE"/>
                 <Button
-                    android:id="@+id/MAIN_BT_MULTITOUCH"
+                    android:id="@+id/MAIN_BT_CUSTOMVIEW"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="MULTITOUCH"/>
+                    android:text="CUSTOM VIEW"/>
 
             </LinearLayout>
         </LinearLayout>
