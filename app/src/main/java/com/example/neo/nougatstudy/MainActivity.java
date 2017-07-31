@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.MAIN_BT_PICKER).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_SCHEDULE).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_CUSTOMVIEW).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_PAINTBOARD).setOnClickListener(this);
 
         Log.d("MYLOG", "MainActivity onCreate 호출 됨");
         Intent paddedIntent = getIntent();
@@ -240,6 +241,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.MAIN_BT_CUSTOMVIEW:
                 intent = new Intent(getApplicationContext(), CustomViewActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.MAIN_BT_PAINTBOARD:
+                intent = new Intent(getApplicationContext(), PaintBoardActivity.class);
                 startActivity(intent);
                 break;
         }

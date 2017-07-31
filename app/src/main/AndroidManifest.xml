@@ -56,7 +56,11 @@
         <activity android:name=".GridViewActivity" />
         <activity android:name=".PickerActivity" />
         <activity android:name=".ScheduleActivity" />
-        <activity android:name=".CustomViewActivity"></activity>
+        <activity android:name=".CustomViewActivity" />
+        <activity android:name=".PaintBoardActivity" />
+        <activity android:name=".ColorDialogActivity"
+        android:theme="@style/Theme.AppCompat.Light.Dialog"
+        android:label="색상 선택"/>
     </application>
 
 </manifest>

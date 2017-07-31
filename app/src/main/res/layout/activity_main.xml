@@ -166,6 +166,12 @@
                     android:layout_height="wrap_content"
                     android:text="CUSTOM VIEW"/>
 
+                <Button
+                    android:id="@+id/MAIN_BT_PAINTBOARD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PAINTBOARD"/>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
