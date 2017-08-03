@@ -58,9 +58,11 @@
         <activity android:name=".ScheduleActivity" />
         <activity android:name=".CustomViewActivity" />
         <activity android:name=".PaintBoardActivity" />
-        <activity android:name=".ColorDialogActivity"
-        android:theme="@style/Theme.AppCompat.Light.Dialog"
-        android:label="색상 선택"/>
+        <activity
+            android:name=".ColorDialogActivity"
+            android:label="색상 선택"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity android:name=".ThreadActivity"></activity>
     </application>
 
 </manifest>

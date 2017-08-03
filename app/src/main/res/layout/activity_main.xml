@@ -172,6 +172,12 @@
                     android:layout_height="wrap_content"
                     android:text="PAINTBOARD"/>
 
+                <Button
+                    android:id="@+id/MAIN_BT_THREAD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="THREAD"/>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

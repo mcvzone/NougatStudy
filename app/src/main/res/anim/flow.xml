@@ -6,4 +6,27 @@
         android:duration="1500"
         android:repeatCount="1"
         />
+
+    <!-- 108 장에서 Twin Animation 기능을 구현 하기 위한 xml -->
+    <!--scale
+        android:pivotX="50%" 기준 축
+        android:pivotY="50%" 기준 축
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:toXScale="3.0" 3배 확대
+        android:toYScale="3.0"
+        android:duration="1500"/> 몇초동안 지속 할 것인가 -->
+
+    <!-- startOffset 말고도, 로테이트 : 회전, 투명 : 알파 -->
+
+    <!-- 108 장에서 Twin Animation 기능을 구현 하기 위한 xml -->
+    <!--scale
+        android:startOffset="1500"
+        android:pivotX="50%" 기준 축
+        android:pivotY="50%" 기준 축
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:toXScale="0.3" 3배 확대
+        android:toYScale="0.3"
+        android:duration="1500"/> 몇초동안 지속 할 것인가 -->
 </set>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.neo.nougatstudy.ThreadActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/threadText"
+        android:textSize="25dp"
+        android:text="표시 : "/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="시작"
+        android:id="@+id/threadBtnStart"/>
+
+    <ProgressBar
+        android:id="@+id/threadProgressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="지연시간을 초단위로 입력하세요!"
+        android:inputType="number"
+        android:id="@+id/threadEditText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PROGRESS BAR"
+        android:id="@+id/threadBtnProgressbar"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Async Task"
+        android:id="@+id/threadBtnAsyncTask"/>
+
+</LinearLayout>

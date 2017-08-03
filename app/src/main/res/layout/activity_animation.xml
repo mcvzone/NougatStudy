@@ -17,4 +17,43 @@
         android:layout_height="wrap_content"
         android:id="@+id/ANIMATION_BT_ANISTART"
         android:text="애니 시작"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ANIMATION_IV_IMOTICON"
+        android:src="@drawable/cry"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ANIMATION_BT_IMOTICON"
+        android:text="시작"/>
+
+    <ProgressBar
+        android:id="@+id/animationProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="100"/>
+
+    <ProgressBar
+        android:id="@+id/animationProgressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="100"/>
+
+    <ProgressBar
+        android:id="@+id/animationProgressBar3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="100"/>
+
+
 </LinearLayout>
