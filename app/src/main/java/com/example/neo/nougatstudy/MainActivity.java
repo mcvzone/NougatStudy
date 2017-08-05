@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -24,15 +25,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        handler = new Handler();
         //ActionBar abar = getSupportActionBar();
         //abar.hide();
 
@@ -74,6 +81,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.MAIN_BT_CUSTOMVIEW).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_PAINTBOARD).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_THREAD).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_SERVERCALL).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_WEBREQ).setOnClickListener(this);
 
         Log.d("MYLOG", "MainActivity onCreate 호출 됨");
         Intent paddedIntent = getIntent();
@@ -255,6 +264,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
+            case R.id.MAIN_BT_SERVERCALL:
+                ClientThread clientThread = new ClientThread();
+                clientThread.start();
+                break;
+
+            case R.id.MAIN_BT_WEBREQ:
+                intent = new Intent(getApplicationContext(), WebRequestActivity.class);
+                startActivity(intent);
+                break;
+
+        }
+    }
+
+    class ClientThread extends Thread{
+        public void run(){
+            try {
+                String localhost = "localhost";
+                int port = 5001;
+
+                Socket socket = new Socket(localhost, port);
+                ObjectOutputStream outstream = new ObjectOutputStream(socket.getOutputStream());
+                outstream.writeObject("안녕!");
+                outstream.flush();
+                Log.d("MYLOG", "서버로 보냄!");
+
+                ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
+                final Object input = inputStream.readObject();
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.d("MYLOG", "받은 값 : " + input);
+                        Toast.makeText(getApplicationContext(), "받은 데이터는 : " + input, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
 

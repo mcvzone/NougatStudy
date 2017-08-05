@@ -93,6 +93,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="PROGRESS BAR" />
+
+                <Button
+                    android:id="@+id/MAIN_BT_SERVERCALL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SERVERCALL" />
+
+                <Button
+                    android:id="@+id/MAIN_BT_WEBREQ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WEB REQ" />
             </LinearLayout>
 
             <LinearLayout
