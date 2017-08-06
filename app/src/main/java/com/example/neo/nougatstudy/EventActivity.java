@@ -13,6 +13,7 @@ public class EventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
+
         textView = (TextView)findViewById(R.id.EVENT_TXT_VIEW);
     }
 

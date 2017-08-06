@@ -20,7 +20,7 @@
             android:id="@+id/webRequestText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="http://naver.com" />
+            android:text="https://naver.com" />
     </LinearLayout>
 
     <ScrollView

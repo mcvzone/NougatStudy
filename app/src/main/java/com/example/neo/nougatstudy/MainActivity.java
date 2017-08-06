@@ -26,7 +26,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -83,6 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.MAIN_BT_THREAD).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_SERVERCALL).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_WEBREQ).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_DATABASE).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_MULTIMEDIA).setOnClickListener(this);
 
         Log.d("MYLOG", "MainActivity onCreate 호출 됨");
         Intent paddedIntent = getIntent();
@@ -273,6 +274,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(getApplicationContext(), WebRequestActivity.class);
                 startActivity(intent);
                 break;
+
+            case R.id.MAIN_BT_DATABASE:
+                intent = new Intent(getApplicationContext(), DatabaseActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.MAIN_BT_MULTIMEDIA:
+                intent = new Intent(getApplicationContext(), MultiMediaActivity.class);
+                startActivity(intent);
+                break;
+
 
         }
     }

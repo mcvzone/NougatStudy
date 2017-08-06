@@ -105,6 +105,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="WEB REQ" />
+
+                <Button
+                    android:id="@+id/MAIN_BT_MULTIMEDIA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MULTI MEDIA" />
             </LinearLayout>
 
             <LinearLayout
@@ -189,6 +195,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="THREAD"/>
+
+                <Button
+                    android:id="@+id/MAIN_BT_DATABASE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DATABASE"/>
 
             </LinearLayout>
         </LinearLayout>

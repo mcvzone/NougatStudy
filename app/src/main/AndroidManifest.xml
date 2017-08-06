@@ -63,7 +63,9 @@
             android:label="색상 선택"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity android:name=".ThreadActivity" />
-        <activity android:name=".WebRequestActivity"></activity>
+        <activity android:name=".WebRequestActivity" />
+        <activity android:name=".DatabaseActivity" />
+        <activity android:name=".MultiMediaActivity"></activity>
     </application>
 
 </manifest>
