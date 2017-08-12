@@ -56,6 +56,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        int permissionRecordAudio = ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO);
+
+        if (permissionRecordAudio == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "녹음권한 있음.", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "녹음권한 없음.", Toast.LENGTH_SHORT).show();
+
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO)){
+                Toast.makeText(this, "녹음권한 필요함.", Toast.LENGTH_SHORT).show();
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 1);
+            }
+        }
+
+        int permissionExtStorageRead = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+
+        if (permissionExtStorageRead == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "외부저장소 읽음 권한 있음.", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "외부저장소 읽음 권한 없음.", Toast.LENGTH_SHORT).show();
+
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)){
+                Toast.makeText(this, "외부저장소 읽음 권한 필요함.", Toast.LENGTH_SHORT).show();
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+            }
+        }
+        int permissionExtStorageWrite = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permissionExtStorageWrite == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "외부저장소 쓰기 권한 있음.", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "외부저장소 쓰기 권한 없음.", Toast.LENGTH_SHORT).show();
+
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                Toast.makeText(this, "외부저장소 쓰기 권한 필요함.", Toast.LENGTH_SHORT).show();
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            }
+        }
+
         findViewById(R.id.MAIN_BT_LAYOUT).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_SCROLLVIEW).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_SUBSCREEN).setOnClickListener(this);
@@ -84,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.MAIN_BT_WEBREQ).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_DATABASE).setOnClickListener(this);
         findViewById(R.id.MAIN_BT_MULTIMEDIA).setOnClickListener(this);
+        findViewById(R.id.MAIN_BT_VIDEOPLAY).setOnClickListener(this);
 
         Log.d("MYLOG", "MainActivity onCreate 호출 됨");
         Intent paddedIntent = getIntent();
@@ -285,6 +327,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
+            case R.id.MAIN_BT_VIDEOPLAY:
+                intent = new Intent(getApplicationContext(), VideoPlayActivity.class);
+                startActivity(intent);
+                break;
 
         }
     }

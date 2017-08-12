@@ -111,6 +111,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="MULTI MEDIA" />
+
+                <Button
+                    android:id="@+id/MAIN_BT_VIDEOPLAY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="VIDEO" />
             </LinearLayout>
 
             <LinearLayout
