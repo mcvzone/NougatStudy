@@ -25,25 +25,26 @@ public class MultiMediaActivity extends AppCompatActivity {
         findViewById(R.id.multiMediaBtn2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                pauseAudio();
             }
         });
         findViewById(R.id.multiMediaBtn3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                resumeAudio();
             }
         });
         findViewById(R.id.multiMediaBtn4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                stopAudio();
             }
         });
     }
 
     public void playAudio(){
         try {
+            closePlayer();
             player = new MediaPlayer();
             player.setDataSource(url);
             player.prepare();
@@ -53,6 +54,30 @@ public class MultiMediaActivity extends AppCompatActivity {
         }
     }
 
-    public void killPlayer(){
+    public void pauseAudio(){
+        if (player != null) {
+            position = player.getCurrentPosition();
+            player.pause();
+        }
+    }
+
+    public void resumeAudio(){
+        if (player != null && !player.isPlaying()) {
+            player.seekTo(position);
+            player.start();
+        }
+    }
+
+    public void stopAudio(){
+        if (player != null && player.isPlaying()) {
+            player.stop();
+        }
+    }
+
+    public void closePlayer(){
+        if( player != null ){
+            player.release();
+            player = null;
+        }
     }
 }
