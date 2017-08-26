@@ -3,6 +3,8 @@ package com.example.neo.nougatstudy;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
@@ -61,5 +63,88 @@ public class SMSReceiver extends BroadcastReceiver {
 
         intent.putExtra("received", format.format(received));
         context.startActivity(intent);
+    }
+
+    {   /** 아래  SMSList 와 SMSDelete 를 사용 하기 위해선, 아래 권한을 요청 해야 함.
+        //SMS Confirm
+        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS);
+
+        if (!(permission == PackageManager.PERMISSION_GRANTED)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_SMS)) {
+                //Toast.makeText(this, "SMS 수신권한 설명 필요함.", Toast.LENGTH_SHORT).show();
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS}, 1);
+            }
+        }
+        */
+    }
+
+    public static final String MESSAGE_TYPE_INBOX = "1";
+    public static final String MESSAGE_TYPE_SENT = "2";
+    public static final String MESSAGE_TYPE_CONVERSATIONS = "3";
+    public static final String MESSAGE_TYPE_NEW = "new";
+
+    public void SMSList(Context context) {
+
+        // Retrieve All SMS
+        /*
+            Inbox = "content://sms/inbox"
+            Failed = "content://sms/failed"
+            Queued = "content://sms/queued"
+            Sent = "content://sms/sent"
+            Draft = "content://sms/draft"
+            Outbox = "content://sms/outbox"
+            Undelivered = "content://sms/undelivered"
+            All = "content://sms/all"
+            Conversations = "content://sms/conversations"
+
+            addressCol= mCurSms.getColumnIndex("address");
+            personCol= mCurSms.getColumnIndex("person");
+            dateCol = mCurSms.getColumnIndex("date");
+            protocolCol= mCurSms.getColumnIndex("protocol");
+            readCol = mCurSms.getColumnIndex("read");
+            statusCol = mCurSms.getColumnIndex("status");
+            typeCol = mCurSms.getColumnIndex("type");
+            subjectCol = mCurSms.getColumnIndex("subject");
+            bodyCol = mCurSms.getColumnIndex("body");
+         */
+        Uri allMessage = Uri.parse("content://sms/");
+        Cursor cur = context.getContentResolver().query(allMessage, null, null, null, null);
+        int count = cur.getCount();
+        Log.d("MYLOG", "SMS count = " + count);
+        String row = "";
+        String msg = "";
+        String date = "";
+        String protocol = "";
+        while (cur.moveToNext()) {
+            row = cur.getString(cur.getColumnIndex("address"));
+            msg = cur.getString(cur.getColumnIndex("body"));
+            date = cur.getString(cur.getColumnIndex("date"));
+            protocol = cur.getString(cur.getColumnIndex("protocol"));
+
+            String type = "";
+            if (protocol == MESSAGE_TYPE_SENT) type = "sent";
+            else if (protocol == MESSAGE_TYPE_INBOX) type = "receive";
+            else if (protocol == MESSAGE_TYPE_CONVERSATIONS) type = "conversations";
+            else if (protocol == null) type = "send";
+
+            Log.d("MYLOG", "SMS Phone: " + row + " / Mesg: " + msg + " / Type: " + type + " / Date: " + date);
+        }
+    }
+
+    public void SMSDelete(Context context) {
+        Uri deleteUri = Uri.parse("content://sms");
+        int count = 0;
+        Cursor c = context.getContentResolver().query(deleteUri, null, null, null, null);
+        while (c.moveToNext()) {
+            try {
+                // Delete the SMS
+                String pid = c.getString(0);
+                // Get id;
+                String uri = "content://sms/" + pid;
+                // count = this.getContentResolver().delete(Uri.parse(uri),null, null);
+            } catch (Exception e) {
+            }
+        }
     }
 }

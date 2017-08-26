@@ -42,20 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //ActionBar abar = getSupportActionBar();
         //abar.hide();
 
-        int permissionReceiveSms = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS);
-
-        if (permissionReceiveSms == PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "SMS 수신권한 있음.", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "SMS 수신권한 없음.", Toast.LENGTH_SHORT).show();
-
-            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECEIVE_SMS)){
-                Toast.makeText(this, "SMS 수신권한 설명 필요함.", Toast.LENGTH_SHORT).show();
-            } else {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECEIVE_SMS}, 1);
-            }
-        }
-
         int permissionRecordAudio = ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO);
 
         if (permissionRecordAudio == PackageManager.PERMISSION_GRANTED) {
